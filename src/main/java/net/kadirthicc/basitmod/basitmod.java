@@ -1,6 +1,7 @@
 package net.kadirthicc.basitmod;
 
 import com.mojang.logging.LogUtils;
+import net.kadirthicc.basitmod.item.ModCreativeTab;
 import net.kadirthicc.basitmod.item.ModdedItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -69,6 +70,7 @@ public class basitmod
 
         modEventBus.addListener(this::commonSetup);
 
+        ModCreativeTab.register(modEventBus);
 
         BLOCKS.register(modEventBus);
 
@@ -105,6 +107,7 @@ public class basitmod
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
             event.accept(ModdedItem.RUBY);
+            event.accept(ModdedItem.RAW_RUBY);
     }
 
     @SubscribeEvent
