@@ -1,6 +1,7 @@
 package net.kadirthicc.basitmod;
 
 import com.mojang.logging.LogUtils;
+import net.kadirthicc.basitmod.item.ModdedItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -97,8 +98,10 @@ public class basitmod
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);
+
+
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+            event.accept(ModdedItem.RUBY);
     }
 
     @SubscribeEvent
