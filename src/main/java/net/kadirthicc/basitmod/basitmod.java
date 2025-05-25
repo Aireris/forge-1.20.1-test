@@ -27,6 +27,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 
@@ -61,7 +62,7 @@ public class basitmod
                 output.accept(EXAMPLE_ITEM.get());
             }).build());
 
-    public basitmod(FMLJavaModLoadingContext context)
+    public basitmod(@NotNull FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
 
@@ -74,6 +75,8 @@ public class basitmod
         ITEMS.register(modEventBus);
 
         CREATIVE_MODE_TABS.register(modEventBus);
+
+        ModdedItem.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
